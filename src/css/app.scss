@@ -1,0 +1,35 @@
+// Lucky generates 3 folders to help you organize your CSS:
+//
+//    - src/css/variables # Files for colors, spacing, etc.
+//    - src/css/mixins # Put your mixin functions in files here
+//    - src/css/components # CSS for your components
+//
+// Remember to import your new CSS files or they won't be loaded:
+//
+//    @import "./variables/colors" # Imports the file in src/css/variables/_colors.scss
+//
+// Note: importing with `~` tells webpack to look in the installed npm packages
+// https://stackoverflow.com/questions/39535760/what-does-a-tilde-in-a-css-url-do
+
+@import "~normalize-scss/sass/normalize/import-now";
+// Add your own components and import them like this:
+
+// Default Lucky styles.
+// Delete these when you're ready to bring in your own CSS.
+body {
+  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  padding: 0;
+}
+
+@import "../../node_modules/flatpickr/dist/flatpickr.min.css";
+@import "../../node_modules/trix/dist/trix.css";
+
+@import "variables/sizes";
+
+@import "layout";
+
+@import "components/inputs";
+@import "components/pages";
+@import "components/page";

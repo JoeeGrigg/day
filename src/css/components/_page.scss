@@ -1,0 +1,27 @@
+.page {
+  flex: 1;
+  padding: 1rem;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid grey;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 2rem;
+    flex: 1;
+  }
+
+  .timestamp {
+    width: 300px;
+    text-align: right;
+  }
+
+  .save {
+    margin-top: 1rem;
+  }
+}
