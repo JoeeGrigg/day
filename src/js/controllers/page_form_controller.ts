@@ -1,15 +1,23 @@
 import { Controller } from 'stimulus';
-import flatpickr from 'flatpickr';
 import { debounce } from 'ts-debounce';
+import flatpickr from 'flatpickr';
+import Axios from 'axios'
+import Notyf from '../notyf';
 
 export default class extends Controller {
-  initialize() {
-    this.setupDatePicker();
-    this.addTrixListener();
-    this.save = debounce(this.saveHandler, 1000);
+  private save = debounce(this.handleSave, 1000);
+  declare readonly formTarget: HTMLFormElement;
+
+  static get targets(): Array<string> {
+    return [ "form" ];
   }
 
-  setupDatePicker() {
+  initialize(): void {
+    this.setupDatePicker();
+    this.addTrixListener();
+  }
+
+  setupDatePicker(): void {
     flatpickr('.datetime', {
       enableTime: true,
       dateFormat: 'Y-m-d H:i:S', // THIS HAS SOME PROBLEMS (Time not being saved)
@@ -19,20 +27,33 @@ export default class extends Controller {
     });
   }
 
-  addTrixListener() {
+  addTrixListener(): void {
     let pageEditor = document.querySelector('#page-trix-editor');
-    if (pageEditor) {
-      pageEditor.addEventListener('trix-change', () => {
-        this.handleChange();
-      })
-    }
+    if (pageEditor == null) return;
+    pageEditor.addEventListener('trix-change', () => {
+      this.handleChange();
+    })
   }
 
-  saveHandler() {
-    console.log('Saving', new Date().getTime());
+  handleSave(): void {
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let formData = new FormData(this.formTarget);
+    Axios({
+      method: 'post',
+      url: `/pages/${params.get('p')}`,
+      data: formData,
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+    .then(res => {
+      Notyf.success('Saved!');
+    })
+    .catch(err => {
+      Notyf.success('Failed to save...');
+    })
+    
   }
 
-  handleChange() {
+  handleChange(): void {
     this.save();
   }
 }

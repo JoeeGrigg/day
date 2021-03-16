@@ -25,7 +25,9 @@ body {
 
 @import "../../node_modules/flatpickr/dist/flatpickr.min.css";
 @import "../../node_modules/trix/dist/trix.css";
+@import "../../node_modules/notyf/notyf.min.css";
 
+@import "helpers";
 @import "variables/sizes";
 
 @import "layout";
