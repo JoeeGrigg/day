@@ -14,7 +14,7 @@ export default class extends Controller {
 
   initialize(): void {
     this.setupDatePicker();
-    this.addTrixListener();
+    this.addTrixListeners();
   }
 
   setupDatePicker(): void {
@@ -27,12 +27,15 @@ export default class extends Controller {
     });
   }
 
-  addTrixListener(): void {
+  addTrixListeners(): void {
     let pageEditor = document.querySelector('#page-trix-editor');
     if (pageEditor == null) return;
     pageEditor.addEventListener('trix-change', () => {
       this.handleChange();
-    })
+    });
+    pageEditor.addEventListener('trix-attachment-add', (e) => {
+      console.log(e.attachment); // ATTACHMENT DOES EXIST BUT IS NOT RECOGNISED
+    });
   }
 
   handleSave(): void {
