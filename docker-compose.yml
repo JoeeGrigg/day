@@ -7,3 +7,13 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
+    volumes:
+      - ./docker_storage/postgres:/var/lib/postgresql/data
+  minio:
+    image: minio/minio
+    ports:
+      - 9000:9000
+    entrypoint: sh
+    command: -c 'mkdir -p /data/day && /usr/bin/minio server /data'
+    volumes:
+      - ./docker_storage/minio:/data

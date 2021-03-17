@@ -26,3 +26,6 @@ dependencies:
   lucky_flow:
     github: luckyframework/lucky_flow
     version: ~> 0.7.2
+  shrine:
+    github: jetrockets/shrine.cr
+    version: ~> 0.6.1

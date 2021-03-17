@@ -61,7 +61,7 @@ export default class extends Controller {
 
   uploadAttachment(file: any) {
     let formData = new FormData();
-    formData.append('file', file);
+    formData.set('attachment:file', file);
     Axios({
       method: 'post',
       url: `/attachments/${this.params.get('p')}`,
