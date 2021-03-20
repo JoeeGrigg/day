@@ -1,0 +1,51 @@
+header {
+  height: $size-header-height;
+  padding: $size-header-padding;
+  border-bottom: 1px solid $colour-border-grey;
+
+  h1 {
+    margin: 0;
+    display: block;
+    line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
+  }
+
+  .btn-header {
+    line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
+  }
+
+  .seperator {
+    border-right: 1px solid $colour-border-grey;
+    padding-right: 1rem;
+    margin-right: 1rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.branding {
+  text-decoration: none;
+  color: $colour-black;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  cursor: pointer;
+  
+  .name {
+    color: $colour-grey;
+    line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
+    margin-right: 1rem;
+  }
+
+  .icon {
+    background: grey;
+    border-radius: 100%;
+    width: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
+  }
+}

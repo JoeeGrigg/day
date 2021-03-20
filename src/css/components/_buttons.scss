@@ -1,0 +1,26 @@
+.btn {
+  border: 1px solid $colour-border-grey;
+  border-radius: 10px;
+  padding: 0 1.5rem;
+  text-decoration: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: $colour-black;
+
+  -webkit-appearance: button;
+
+  &:hover {
+    background: $colour-hover-grey;
+  }
+}
+
+.btn-primary {
+  background: $colour-primary;
+  border: none;
+  color: #ffffff;
+
+  &:hover {
+    background: lighten($colour-primary, 10)
+  }
+}

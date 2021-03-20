@@ -28,11 +28,16 @@ abstract class MainLayout
 
   def render_header
     header do
-      link to: Pages::Index do
+      link to: Pages::Index, class: "branding" do
         h1 "Day"
       end
       div class: "actions" do
-        link "New Page", to: Pages::Create
+        link "New Page", to: Pages::Create, class: "btn btn-primary btn-header"
+        span class: "seperator"
+        div class: "profile" do
+          span "Joe Grigg", class: "name"
+          div class: "icon"
+        end
       end
     end
   end

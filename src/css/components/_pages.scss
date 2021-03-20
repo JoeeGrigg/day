@@ -3,17 +3,42 @@
   height: 100%;
   overflow-y: auto;
 
-  border-right: 1px solid black;
-
+  border-right: 1px solid $colour-border-grey;
+  
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
-
+  
   li {
     margin: 0;
     padding: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $colour-border-grey;
+    color: $colour-black;
+    
+    
+    &:hover {
+      background: $colour-hover-grey;
+    }
+
+    * {
+      display: block;
+    }
+
+    .name {
+      font-weight: bold;
+      margin-bottom: .5rem;
+      font-size: 110%;
+    }
+
+    .timestamp {
+      color: $colour-grey;
+      font-size: 85%;
+    }
+  }
+
+  a {
+    text-decoration: none;
   }
 }

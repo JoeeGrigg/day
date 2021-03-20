@@ -5,4 +5,8 @@ label, input, textarea {
 input, textarea {
   border: none;
   padding: 1rem;
+
+  &:active, &:focus {
+    outline: none;
+  }
 }

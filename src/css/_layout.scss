@@ -1,20 +1,12 @@
 header {
-  height: $size-header-height;
-  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  padding: 0 1rem;
-
-  border-bottom: 1px solid black;
-
+  align-items: stretch;
   box-sizing: border-box;
 
-  h1 {
-    margin: 0;
-  }
+  border-bottom: 1px solid black;
 }
 
 body > .content {

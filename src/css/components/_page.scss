@@ -1,24 +1,37 @@
 .page {
   flex: 1;
-  padding: 1rem;
+  padding: $size-page-padding 1rem;
+  margin: 0 auto;
+  max-width: 60%;
+  color: $colour-black;
 
   .header {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid grey;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
+    border-bottom: 1px solid $colour-border-grey;
+    padding-bottom: $size-page-padding;
+    margin-bottom: $size-page-padding;
 
+    input {
+      width: 100%;
+
+      &:active {
+        outline: none;
+      }
+    }
+  }
+  
+  .timestamp {
+    display: block;
+    color: inherit;
+    padding: 0;
+    margin-bottom: 1rem;
+    color: $colour-grey;
+  }
+  
   .name {
     font-weight: bold;
     font-size: 2rem;
-    flex: 1;
-  }
-
-  .timestamp {
-    width: 300px;
-    text-align: right;
+    padding: 0;
+    color: $colour-black;
   }
 
   .save {

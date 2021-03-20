@@ -29,9 +29,12 @@ body {
 
 @import "helpers";
 @import "variables/sizes";
+@import "variables/colours";
 
 @import "layout";
 
 @import "components/inputs";
+@import "components/buttons";
+@import "components/header";
 @import "components/pages";
 @import "components/page";
