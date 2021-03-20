@@ -1,8 +1,12 @@
 import { Controller } from 'stimulus';
 import { debounce } from 'ts-debounce';
 import flatpickr from 'flatpickr';
-import Axios from 'axios'
+import Axios from 'axios';
 import Notyf from '../notyf';
+
+interface IUploadResponse {
+  id: string
+}
 
 export default class extends Controller {
   private save = debounce(this.handleSave, 1000);
@@ -55,24 +59,25 @@ export default class extends Controller {
     this.save();
   }
 
-  handleAttachment(e: any): void { // TODO: EVENT NEEDS TO BE MADE THE CORRECT TYPE
-    if (e.attachment.file) this.uploadAttachment(e.attachment.file);
+  async handleAttachment(e: any) { // TODO: EVENT NEEDS TO BE MADE THE CORRECT TYPE
+    if (e.attachment.file) {
+      let res = await this.uploadAttachment(e.attachment.file);
+      let page_id = this.params.get('p')
+      e.attachment.setAttributes({
+        url: `/attachements/${page_id}/${res.data.id}`,
+        href: `/attachements/${page_id}/${res.data.id}?content-disposition=attachment`
+      })
+    }
   }
 
-  uploadAttachment(file: any) {
+  async uploadAttachment(file: any) {
     let formData = new FormData();
     formData.set('attachment:file', file);
-    Axios({
+    return await Axios.request<IUploadResponse>({
       method: 'post',
       url: `/attachments/${this.params.get('p')}`,
       data: formData,
       headers: { 'Content-Type': 'multipart/form-data' }
-    })
-    .then(res => {
-      console.log('Res: ', res);
-    })
-    .catch(err => {
-      console.log('Err: ', err);
     })
   }
 }

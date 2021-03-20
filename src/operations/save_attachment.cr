@@ -7,5 +7,6 @@ class SaveAttachment < Attachment::SaveOperation
 
   private def upload_file(f)
     result = Shrine.upload(File.new(f.tempfile.path), "store", metadata: { "filename" => f.filename })
+    key.value = result.id
   end
 end
