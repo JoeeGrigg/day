@@ -1,0 +1,27 @@
+trix-toolbar {
+  border-bottom: 1px solid $colour-border-grey;
+  margin-bottom: $size-page-padding;
+
+  .trix-button {
+    border: none !important;
+    margin: .5rem;
+  }
+  
+  .trix-button-group {
+    margin-left: 0 !important;
+    margin-bottom: $size-page-padding;
+    border: none;
+    border-right: 1px solid $colour-border-grey;
+
+    &:last-of-type, &.trix-button-group--file-tools {
+      border-right: none;
+    }
+  }
+}
+
+trix-editor {
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  flex: 1;
+}
