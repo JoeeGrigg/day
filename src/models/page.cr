@@ -6,4 +6,7 @@ class Page < BaseModel
 
     has_many attachments : Attachment
   end
+
+  JS_DATE_FORMAT = "%FT%T.%LZ"
+  DISPLAY_DATE_FORMAT = "%A, %-d %B %Y @ %l:%M %P"
 end

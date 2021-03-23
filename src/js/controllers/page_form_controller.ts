@@ -25,9 +25,9 @@ export default class extends Controller {
   setupDatePicker(): void {
     flatpickr('.datetime', {
       enableTime: true,
-      dateFormat: 'Y-m-d H:i:S', // TODO: THIS HAS SOME PROBLEMS (Time not being saved)
-      altFormat: 'l, j F Y @ G:i K',
+      dateFormat: 'Z',
       altInput: true,
+      altFormat: 'l, j F Y @ G:i K',
       position: 'auto'
     });
   }
@@ -48,7 +48,7 @@ export default class extends Controller {
       headers: { 'Content-Type': 'multipart/form-data' }
     })
     .then(_res => {
-      Notyf.success('Saved!');
+      Notyf.success('Saved!'); // THIS DOESN'T WORK AFTER PAGE CHANGE
     })
     .catch(_err => {
       Notyf.success('Failed to save...');

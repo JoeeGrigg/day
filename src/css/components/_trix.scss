@@ -1,6 +1,7 @@
 trix-toolbar {
   border-bottom: 1px solid $colour-border-grey;
   margin-bottom: $size-page-padding;
+  padding: ($size-page-padding / 2)  0;
 
   .trix-button {
     border: none !important;
@@ -9,7 +10,7 @@ trix-toolbar {
   
   .trix-button-group {
     margin-left: 0 !important;
-    margin-bottom: $size-page-padding;
+    margin-bottom: 0 !important;
     border: none;
     border-right: 1px solid $colour-border-grey;
 
