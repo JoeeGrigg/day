@@ -14,7 +14,15 @@ class Pages::IndexPage < MainLayout
   def render_pages_list
     div class: "pages" do
       ul do
-        pages.each do |page|
+        month = Time.utc.month
+        year = Time.utc.year
+        pages.each_with_index do |page, i|
+          if page.timestamp.month != month
+            li class: "month-seperator" do 
+              text page.timestamp.to_s("%B#{page.timestamp.year != year ? " %Y" : ""}")
+            end if i > 0
+            month = page.timestamp.month
+          end
           link to: Pages::Index.with(p: page.id) do
             li do
               span page.name, class: "name"
