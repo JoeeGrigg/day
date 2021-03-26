@@ -64,8 +64,8 @@ export default class extends Controller {
       let res = await this.uploadAttachment(e.attachment.file);
       let page_id = this.params.get('p')
       e.attachment.setAttributes({
-        url: `/attachements/${page_id}/${res.data.id}`,
-        href: `/attachements/${page_id}/${res.data.id}?content-disposition=attachment`
+        url: `/attachments/${page_id}/${res.data.id}`,
+        href: `/attachments/${page_id}/${res.data.id}?content-disposition=attachment`
       })
     }
   }
