@@ -1,4 +1,6 @@
 class Signup::Create < BrowserAction
+  skip check_login
+  
   post "/signup" do
     SaveUser.create(params) do |operation, user|
       if user

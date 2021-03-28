@@ -5,6 +5,8 @@ class Page < BaseModel
     column content : String
 
     has_many attachments : Attachment
+
+    # TODO: Add belongs to user
   end
 
   JS_DATE_FORMAT = "%FT%T.%LZ"
