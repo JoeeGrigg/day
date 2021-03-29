@@ -19,7 +19,7 @@ module AuthenticatedRoute
     unless current_user
       flash.failure = "Please log in"
       cookies.delete(Login::COOKIE_NAME)
-      redirect to: Signin::Index
+      redirect to: Login::Index
     end
     continue
   end

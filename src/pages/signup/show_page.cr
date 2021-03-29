@@ -10,7 +10,7 @@ class Signup::ShowPage < IndexLayout
       strong "Remember"
       text " to keep this identifier safe as you need it to log in"
     end
-    link to: Signin::Index do
+    link to: Login::Index do
       button "Login Now"
     end
   end

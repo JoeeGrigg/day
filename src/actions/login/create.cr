@@ -1,8 +1,8 @@
-class Signin::Create < BrowserAction
+class Login::Create < BrowserAction
   include RedirectToPages
   skip check_login
   
-  post "/signin" do
+  post "/login" do
     SaveLogin.create(params) do |operation, login|
       if login
         flash.success = "Successfully logged in"
@@ -10,7 +10,7 @@ class Signin::Create < BrowserAction
         redirect to: Pages::Index
       else
         flash.failure = "Failed to log in"
-        html Signin::IndexPage, op: operation
+        html Login::IndexPage, op: operation
       end
     end
   end
