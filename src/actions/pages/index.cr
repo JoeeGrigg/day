@@ -1,4 +1,5 @@
 class Pages::Index < BrowserAction
+  # TODO: Page errors if tried to be accessed when not logged in
   param p : UUID?
 
   get "/pages" do
