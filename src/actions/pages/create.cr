@@ -3,7 +3,8 @@ class Pages::Create < BrowserAction
     SavePage.create(
       name: "New Page",
       timestamp: Time.utc,
-      content: "Please give some content"
+      content: "Please give some content",
+      user_id: current_user.id
     ) do |operation, page|
       if page
         flash.success = "Page created"
