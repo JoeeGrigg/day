@@ -1,4 +1,5 @@
 class Signin::Create < BrowserAction
+  include RedirectToPages
   skip check_login
   
   post "/signin" do
