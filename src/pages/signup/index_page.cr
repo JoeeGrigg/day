@@ -1,5 +1,5 @@
 class Signup::IndexPage < IndexLayout
-  needs op : SaveUser
+  needs op : SaveNewUser
 
   def content
     h1 "Sign Up"

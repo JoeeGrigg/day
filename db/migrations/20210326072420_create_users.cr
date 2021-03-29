@@ -1,4 +1,4 @@
-class CreateUsers::V20210326072420 < Avram::Migrator::Migration::V1
+class SaveNewUsers::V20210326072420 < Avram::Migrator::Migration::V1
   def migrate
     # Learn about migrations at: https://luckyframework.org/guides/database/migrations
     create table_for(User) do

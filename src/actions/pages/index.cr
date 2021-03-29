@@ -6,6 +6,7 @@ class Pages::Index < BrowserAction
     page = p ? PageQuery.new.find(p.not_nil!) : nil
     html IndexPage,
          pages: pages,
-         page: page
+         page: page,
+         user: current_user
   end
 end

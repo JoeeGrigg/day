@@ -1,3 +1,5 @@
+$header-line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
+
 header {
   height: $size-header-height;
   padding: $size-header-padding;
@@ -36,25 +38,23 @@ header {
   flex-direction: row;
   align-items: stretch;
   cursor: pointer;
-
-  $profile-line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
-
-  &> * {
-    line-height: $profile-line-height;
-    margin-right: 1rem;
-  }
+  text-decoration: none;
+  margin-right: 1rem;
 
   .name {
     color: $colour-grey;
+    margin-right: 1rem;
+    line-height: $header-line-height;
   }
 
   .icon {
     background: grey;
     border-radius: 100%;
-    width: $profile-line-height;
+    width: $header-line-height;
   }
 
-  .logout {
-    margin-right: 0;
-  }
+}
+
+.logout {
+  line-height: $header-line-height;
 }

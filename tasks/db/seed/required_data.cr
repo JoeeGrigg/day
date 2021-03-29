@@ -17,13 +17,13 @@ class Db::Seed::RequiredData < LuckyCli::Task
 
     # Using a SaveOperation:
     #
-    # SaveUser.create!(email: "me@example.com", name: "Jane")
+    # SaveNewUser.create!(email: "me@example.com", name: "Jane")
     #
     # You likely want to be able to run this file more than once. To do that,
     # only create the record if it doesn't exist yet:
     #
     # unless UserQuery.new.email("me@example.com").first?
-    #  SaveUser.create!(email: "me@example.com", name: "Jane")
+    #  SaveNewUser.create!(email: "me@example.com", name: "Jane")
     # end
     puts "Done adding required data"
   end

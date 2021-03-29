@@ -1,6 +1,7 @@
-class SaveUser < User::SaveOperation
+class SaveNewUser < User::SaveOperation
   attribute password : String
   attribute password_confirmation : String
+  permit_columns name, recovery_email
 
   before_save handle_input
 

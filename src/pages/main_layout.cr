@@ -12,6 +12,8 @@ abstract class MainLayout
     "Pages"
   end
 
+  needs user : User
+
   def render
     html_doctype
 
@@ -34,11 +36,11 @@ abstract class MainLayout
       div class: "actions" do
         link "New Page", to: Pages::Create, class: "btn btn-primary btn-header"
         span class: "seperator"
-        div class: "profile" do
-          span "Joe Grigg", class: "name"
+        link to: Profile::Index, class: "profile" do
+          span user.name.to_s, class: "name" if user.name
           div class: "icon"
-          link "Logout", to: Login::Delete, class: "logout btn"
         end
+        link "Logout", to: Login::Delete, class: "logout btn"
       end
     end
   end
