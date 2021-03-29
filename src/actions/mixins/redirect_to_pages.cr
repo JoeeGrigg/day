@@ -4,7 +4,7 @@ module RedirectToPages
   end
 
   private def if_logged_in
-    redirect to: Pages::Index if current_user
+    redirect to: Pages::Index if current_user?
     continue
   end
 end

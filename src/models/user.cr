@@ -4,5 +4,6 @@ class User < BaseModel
     column encrypted_password : String
 
     # TODO: Add recovery email that is optional
+    # TODO: Add name
   end
 end

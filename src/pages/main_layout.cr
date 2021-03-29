@@ -37,6 +37,7 @@ abstract class MainLayout
         div class: "profile" do
           span "Joe Grigg", class: "name"
           div class: "icon"
+          link "Logout", to: Login::Delete, class: "logout btn"
         end
       end
     end
