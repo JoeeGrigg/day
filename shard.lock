@@ -100,6 +100,10 @@ shards:
     git: https://github.com/luckyframework/teeplate.git
     version: 0.8.2
 
+  validator:
+    git: https://github.com/nicolab/crystal-validator.git
+    version: 1.6.0
+
   webdrivers:
     git: https://github.com/matthewmcgarvey/webdrivers.cr.git
     version: 0.3.2

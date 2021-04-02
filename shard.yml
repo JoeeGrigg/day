@@ -29,3 +29,6 @@ dependencies:
   shrine:
     github: jetrockets/shrine.cr
     version: ~> 0.6.1
+  validator:
+    github: nicolab/crystal-validator
+    version: ~> 1.6.0
