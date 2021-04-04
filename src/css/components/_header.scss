@@ -11,10 +11,6 @@ header {
     line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
   }
 
-  .btn-header {
-    line-height: calc(#{$size-header-height} - (#{$size-header-padding} * 2));
-  }
-
   .seperator {
     border-right: 1px solid $colour-border-grey;
     padding-right: 1rem;
@@ -48,9 +44,14 @@ header {
   }
 
   .icon {
-    background: grey;
     border-radius: 100%;
+    border: 1px solid $colour-border-grey;
     width: $header-line-height;
+
+    img {
+      width: calc(#{$header-line-height} - 20px);
+      padding: 8px 0 0 9px;
+    }
   }
 
 }

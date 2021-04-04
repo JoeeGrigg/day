@@ -38,9 +38,11 @@ abstract class MainLayout
         span class: "seperator"
         link to: Profile::Index, class: "profile" do
           span user.name.to_s, class: "name" if user.name
-          div class: "icon"
+          div class: "icon" do
+            img src: asset("images/user.svg")
+          end
         end
-        link "Logout", to: Login::Delete, class: "logout btn"
+        link "Logout", to: Login::Delete, class: "logout btn btn-header"
       end
     end
   end

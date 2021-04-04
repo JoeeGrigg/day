@@ -4,6 +4,8 @@ class Profile::IndexPage < MainLayout
   def content
     div class: "layout-center" do
       link "Back to Pages", to: Pages::Index
+      br
+      br
       h1 "Edit your profile"
       form_for Profile::Update do
         mount Shared::Field, attribute: op.name
@@ -21,7 +23,7 @@ class Profile::IndexPage < MainLayout
         else
           mount Shared::Field, attribute: op.recovery_email, &.email_input
         end
-        submit "Save"
+        submit "Save", class: "btn btn-primary"
       end
     end
   end

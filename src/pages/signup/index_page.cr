@@ -10,8 +10,10 @@ class Signup::IndexPage < IndexLayout
       form_for Signup::Create do
         mount Shared::Field, attribute: op.password, &.password_input
         mount Shared::Field, attribute: op.password_confirmation, &.password_input
-        submit "Signup"
+        submit "Signup", class: "btn btn-primary"
       end
+      br
+      link "Already have an account?", to: Login::Index
     end
   end
 end

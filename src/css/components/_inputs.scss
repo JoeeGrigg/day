@@ -10,3 +10,19 @@ label, input, textarea {
     outline: none;
   }
 }
+
+.form-field {
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $colour-border-grey;
+    padding: .5rem;
+  }
+}
