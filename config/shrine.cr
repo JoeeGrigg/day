@@ -40,13 +40,37 @@
 #   end
 # end
 
+class Shrine
+  module Storage
+    class S3 < Storage::Base
+      def url(id : String, **options) : String
+        endpoint : String?
+        if ep = client.@endpoint
+          endpoint = ep.gsub("https://", "")
+        end
+        presigned_options = Awscr::S3::Presigned::Url::Options.new(
+          aws_access_key: client.@aws_access_key,
+          aws_secret_key: client.@aws_secret_key,
+          region: client.@region,
+          object: "/#{object_key(id)}",
+          bucket: bucket,
+          host_name: endpoint
+        )
+
+        url = Awscr::S3::Presigned::Url.new(presigned_options)
+        url.for(:get)
+      end
+    end
+  end
+end
+
 client = Awscr::S3::Client.new(
-  "minio",
-  "minioadmin",
-  "minioadmin",
-  endpoint: "http://localhost:9000"
+  ENV["STORAGE_REGION"],
+  ENV["STORAGE_KEY"],
+  ENV["STORAGE_SECRET"],
+  endpoint: ENV.fetch("STORAGE_ENDPOINT", nil)
 )
 
 Shrine.configure do |config|
-  config.storages["store"] = Shrine::Storage::S3.new(bucket: "day", client: client)
+  config.storages["store"] = Shrine::Storage::S3.new(bucket: ENV["STORAGE_BUCKET"], client: client)
 end
