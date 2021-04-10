@@ -2,11 +2,16 @@
   height: 100%;
   box-sizing: border-box;
   flex: 1;
-  padding: $size-page-padding 1rem 0 1rem;
+  padding: $size-page-padding 1rem $size-page-padding 1rem;
   margin: 0 auto;
-  max-width: 60%;
   color: $colour-black;
   overflow-y: auto;
+
+  .page-container {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: $size-page-padding;
+  }
 
   form {
     display: flex;

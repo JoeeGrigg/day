@@ -6,7 +6,9 @@ class Pages::IndexPage < MainLayout
     div class: "index" do
       render_pages_list
       div class: "page" do
-        page ? render_page : render_no_page
+        div class: "page-container" do
+          page ? render_page : render_no_page
+        end
       end
     end
   end
