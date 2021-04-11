@@ -1,6 +1,6 @@
 class Pages::Update < BrowserAction
   put "/pages/:page_id" do
-    page = PageQuery.new.find(page_id)
+    page = PageQuery.new.user_id(current_user.id).find(page_id)
     SavePage.update(page, params) do |operation, contact|
       if operation.saved?
         flash.success = "Page saved"
