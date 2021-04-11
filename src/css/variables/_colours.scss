@@ -2,5 +2,7 @@ $colour-primary: #6554c0;
 $colour-black: #2c2c2c;
 $colour-grey: #858585;
 
+$colour-primary-light: lighten($colour-primary, 20);
+
 $colour-border-grey: #e7e7e7;
 $colour-hover-grey: lighten($colour-border-grey, 5);

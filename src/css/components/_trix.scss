@@ -9,7 +9,17 @@ trix-toolbar {
 
   .trix-button {
     border: none !important;
-    margin: .5rem;
+    border-radius: 5px;
+    margin: .1rem;
+    padding: 1.5rem;
+
+    &::before {
+      background-size: initial;
+    }
+
+    &.trix-active {
+      background: $colour-primary-light;
+    }
   }
   
   .trix-button-group {
