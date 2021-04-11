@@ -3,6 +3,8 @@ module AuthenticatedRoute
     before check_login
   end
 
+  # TODO: Start memoizing methods within each request to improve number of queries
+
   def current_token? : String?
     cookies.get?(Login::COOKIE_NAME)
   end

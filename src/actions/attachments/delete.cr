@@ -1,5 +1,5 @@
-class Attachments::Show < BrowserAction
-  get "/attachments/:page_id/:attachment_id" do
+class Attachments::Delete < ApiAction
+  delete "/attachments/:page_id/:attachment_id" do
     attachment = AttachmentQuery.new
       .where_page(
         PageQuery.new
@@ -7,6 +7,7 @@ class Attachments::Show < BrowserAction
           .id(page_id)
       )
       .find(attachment_id)
-    redirect attachment.url
+    attachment.soft_delete
+    json({deleted: true})
   end
 end
