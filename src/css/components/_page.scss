@@ -8,7 +8,8 @@
   overflow-y: auto;
 
   .page-container {
-    max-width: 60%;
+    max-width: calc(100vw * 0.6);
+    min-width: 750px;
     margin: 0 auto;
     margin-bottom: $size-page-padding;
   }
@@ -50,5 +51,41 @@
 
   .save {
     margin-top: 1rem;
+  }
+}
+
+.page-content {
+  %block {
+    padding: .75rem;
+    background: lighten($colour-border-grey, 5);
+    margin: 1rem 0;
+  }
+  
+  blockquote {
+    @extend %block;
+    border-left: 10px solid $colour-border-grey;
+    margin-left: 2rem;
+  }
+  
+  pre {
+    @extend %block;
+    border: 1px solid $colour-border-grey;
+    border-radius: 3px;
+  }
+
+  figure {
+    @extend %block;
+    margin: 0;
+
+    a, textarea {
+      text-align: center;
+      padding: 0;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: .75rem;
+    }
   }
 }

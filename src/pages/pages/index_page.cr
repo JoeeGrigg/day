@@ -48,7 +48,7 @@ class Pages::IndexPage < MainLayout
         input name: "page:name", class: "name", value: p.name, data_action: "input->page-form#handleChange"
       end
       input value: p.content, id: "page:content", name: "page:content", type: "hidden"
-      tag "trix-editor", input: "page:content", id: "page-trix-editor"
+      tag "trix-editor", input: "page:content", id: "page-trix-editor", class: "page-content"
     end
   end
 end
