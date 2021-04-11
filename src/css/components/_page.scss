@@ -2,7 +2,7 @@
   height: 100%;
   box-sizing: border-box;
   flex: 1;
-  padding: $size-page-padding 1rem $size-page-padding 1rem;
+  padding: 0 1rem $size-page-padding 1rem;
   margin: 0 auto;
   color: $colour-black;
   overflow-y: auto;
@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-top: $size-page-padding;
   }
 
   .header {
